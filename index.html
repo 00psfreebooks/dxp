@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DXP</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+    }
+    #header {
+      background-color: gray;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center the content horizontally */
+      padding: 0 20px;
+    }
+    #menu-icon {
+      color: white;
+      font-size: 24px;
+      margin-right: 20px; /* Add margin to separate the menu icon from the title */
+    }
+    #title {
+      color: white;
+      font-size: 24px;
+      text-align: center;
+    }
+    #video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center; /* Vertically center the video */
+      margin-top: 50px;
+      width: 100%;
+      height: 50vh; /* Set initial height to 50% of viewport height */
+    }
+    #video-frame {
+      max-width: 80%; /* Set initial width to 80% of viewport width */
+      max-height: 100%; /* Set initial height to 100% */
+      border: 8px solid black; /* Changed border thickness to 8px */
+      border-radius: 20px;
+      overflow: hidden; /* Hide the video corners within the border */
+    }
+    #youtube-video {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    #navigation {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .nav-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div id="menu-icon">&#9776;</div>
+    <div id="title">DXP</div>
+  </div>
+  <div id="video-container">
+    <div id="video-frame">
+      <!-- The video will be dynamically updated based on the videoLinks array -->
+      <iframe id="youtube-video" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div id="navigation">
+    <div id="previous" class="nav-button">Previous</div>
+    <div id="next" class="nav-button">Next</div>
+  </div>
+
+  <script>
+    // JavaScript
+    const videoIds = [
+      '6T7pUEZfgdI', // Rogan 1
+      'vIeFt88Hm8s', // Rogan 2
+      'jey_CzIOfYE', // Harris 1
+      'GEf6X-FueMo', // Harris 2
+      'PqpYxD71hJU', // Harris 3
+      'aALsFhZKg-Q', // Harris 4
+      'I8Xc2_FtpHI', // MoM 1
+      'EN2lyN7rM4E', // MoM 2
+      'Us979jCjHu8', // MoM 3
+      'bV16NEWld8Q', // MoM 4
+      'RudKmwzDpNY', // MoM 5
+      'nsZ8XqHPjI4', // MoM 6
+      'F3n5qtj89QE', // MoM 7
+      'Nb5cBkbQpGY', // MoM 8
+      'yXZSeiAl4PI', // MoM 9
+      '7XtEZvLo-Sc', // MoM 10
+      'T4fjSrVCDvA', // MoM 11
+      '6V1eMvGGcXQ', // MoM 12
+      // Add more video ids as needed
+    ];
+
+    const videoLinks = videoIds.map(videoId => `https://www.youtube.com/embed/${videoId}`);
+
+    let currentVideoIndex = 0;
+    const youtubeVideoFrame = document.getElementById('youtube-video');
+    const previousButton = document.getElementById('previous');
+    const nextButton = document.getElementById('next');
+
+    function updateVideo() {
+      youtubeVideoFrame.src = videoLinks[currentVideoIndex];
+      previousButton.style.display = currentVideoIndex === 0 ? 'none' : 'inline';
+      nextButton.style.display = currentVideoIndex === videoLinks.length - 1 ? 'none' : 'inline';
+    }
+
+    function resizeVideoFrame() {
+      const videoAspectRatio = 16 / 9; // Assuming all videos have a 16:9 aspect ratio
+      const availableWidth = window.innerWidth * 0.8; // Take up to 80% of the page width
+      const availableHeight = window.innerHeight * 0.5; // Take up to 50% of the page height
+
+      // Calculate the maximum dimensions based on available width and height while maintaining the aspect ratio
+      const maxWidth = Math.min(availableWidth, availableHeight * videoAspectRatio);
+      const maxHeight = maxWidth / videoAspectRatio; // Calculate height based on the aspect ratio
+
+      // Set the width and height of the iframe to maintain the aspect ratio and fit the available space
+      youtubeVideoFrame.style.width = maxWidth + 'px';
+      youtubeVideoFrame.style.height = maxHeight + 'px';
+    }
+
+    window.addEventListener('resize', resizeVideoFrame);
+    youtubeVideoFrame.addEventListener('load', resizeVideoFrame);
+
+    previousButton.addEventListener('click', () => {
+      if (currentVideoIndex > 0) {
+        currentVideoIndex--;
+        updateVideo();
+      }
+    });
+
+    nextButton.addEventListener('click', () => {
+      if (currentVideoIndex < videoLinks.length - 1) {
+        currentVideoIndex++;
+        updateVideo();
+      }
+    });
+
+    // Initialize with the first video
+    updateVideo();
+  </script>
+</body>
+</html>
