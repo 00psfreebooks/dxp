@@ -4,166 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DXP</title>
-  <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: black;
-    justify-content: center;
-    align-items: center;
-  }
-  #header {
-    background-color: gray;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-  }
-  #menu-icon {
-    color: white;
-    font-size: 24px;
-    margin-right: 20px; /* Add margin to separate the menu icon from the title */
-    cursor: pointer;
-  }
-  #title {
-    color: white;
-    font-size: 24px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 2.5em;
-    height: 100%;
-    margin: 0 auto; /* Center the title horizontally */
-    display: flex;
-    align-items: center; /* Vertically center the title */
-  }
-  #dropdown-menu {
-    position: absolute;
-    top: 100px;
-    left: 0; /* Set left to 0 and right to auto to position the menu below the menu icon */
-    background-color: gray;
-    display: none;
-    padding: 10px;
-  }
-  #dropdown-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  #dropdown-menu li {
-    cursor: pointer;
-    padding: 5px 10px;
-    color: white;
-  }
-  #dropdown-menu li:hover {
-    background-color: #555;
-  }
-  #video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Vertically center the video */
-    margin-top: 50px;
-    width: 100%;
-    height: 50vh; /* Set initial height to 50% of viewport height */
-  }
-  #video-frame {
-    max-width: 80%; /* Set initial width to 80% of viewport width */
-    max-height: 100%; /* Set initial height to 100% */
-    border: 8px solid black; /* Changed border thickness to 8px */
-    border-radius: 20px;
-    overflow: hidden; /* Hide the video corners within the border */
-  }
-  #youtube-video {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-  #navigation {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-  }
-  /* Gap between buttons */
-  .nav-button {
-    margin-left: 20px;
-    margin-right: 20px;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-  }
- 
-  .nav-button p {
-  	margin: 0;
-  	display: inline-block;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  }
-  
-  /* Glowing effect styles */
-  .glow-on-hover {
-    /* Add the styles for the glowing button */
-    width: 150px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #7DF9FF;
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-  }
-
-  .glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
-  }
-
-  .glow-on-hover:active {
-    color: #000;
-  }
-
-  .glow-on-hover:active:after {
-    background: transparent;
-  }
-
-  .glow-on-hover:hover:before {
-    opacity: 1;
-  }
-
-  .glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #111;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-  }
-
-  @keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-  }
-</style>
-
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="header">
@@ -172,6 +13,9 @@
     <div id="dropdown-menu">
       <ul>
         <li id="meaning-menu">Meaning</li>
+        <li id="health-menu">Health</li>
+        <li id="business-menu">Business</li>
+        <li id="relationships-menu">Relationships</li>
         <li id="oz-menu">Oz</li>
       </ul>
     </div>
@@ -179,7 +23,7 @@
   <div id="video-container">
     <div id="video-frame">
       <!-- The video will be dynamically updated based on the videoLinks array -->
-      <iframe id="youtube-video" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe id="video-player" src="" title="Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </div>
   <div id="navigation">
@@ -188,111 +32,6 @@
     <!-- Next button with glowing effect -->
     <div id="next" class="nav-button glow-on-hover"><p>Next</p></div>
   </div>
-
-  <script>
-    // JavaScript
-    const meaningVids = [
-      '6T7pUEZfgdI', // Rogan 1
-      'vIeFt88Hm8s', // Rogan 2
-      'jey_CzIOfYE', // Harris 1
-      'GEf6X-FueMo', // Harris 2
-      'PqpYxD71hJU', // Harris 3
-      'aALsFhZKg-Q', // Harris 4
-      'I8Xc2_FtpHI', // MoM 1
-      'EN2lyN7rM4E', // MoM 2
-      'Us979jCjHu8', // MoM 3
-      'bV16NEWld8Q', // MoM 4
-      'RudKmwzDpNY', // MoM 5
-      'nsZ8XqHPjI4', // MoM 6
-      'F3n5qtj89QE', // MoM 7
-      'Nb5cBkbQpGY', // MoM 8
-      'yXZSeiAl4PI', // MoM 9
-      '7XtEZvLo-Sc', // MoM 10
-      'T4fjSrVCDvA', // MoM 11
-      '6V1eMvGGcXQ', // MoM 12
-      
-      // Add more video ids as needed
-    ];
-
-    const ozVids = [
-      'NSLm__BUnmI',
-      'p2hk8Qp8dd0',
-      // Add more video ids as needed
-    ];
-
-    let currentVideoIndex = 0;
-    let currentVideoArray = meaningVids; // Initialize with the "Meaning" category
-    const youtubeVideoFrame = document.getElementById('youtube-video');
-    const previousButton = document.getElementById('previous');
-    const nextButton = document.getElementById('next');
-    const menuIcon = document.getElementById('menu-icon');
-    const dropdownMenu = document.getElementById('dropdown-menu');
-
-    function updateVideo() {
-      const videoIdPrefix = 'https://www.youtube.com/embed/';
-      const videoLink = videoIdPrefix + currentVideoArray[currentVideoIndex];
-      youtubeVideoFrame.src = videoLink;
-      previousButton.style.display = currentVideoIndex === 0 ? 'none' : 'inline';
-      nextButton.style.display = currentVideoIndex === currentVideoArray.length - 1 ? 'none' : 'inline';
-    }
-
-    function resizeVideoFrame() {
-      const videoAspectRatio = 16 / 9; // Assuming all videos have a 16:9 aspect ratio
-      const availableWidth = window.innerWidth * 0.8; // Take up to 80% of the page width
-      const availableHeight = window.innerHeight * 0.5; // Take up to 50% of the page height
-
-      // Calculate the maximum dimensions based on available width and height while maintaining the aspect ratio
-      const maxWidth = Math.min(availableWidth, availableHeight * videoAspectRatio);
-      const maxHeight = maxWidth / videoAspectRatio; // Calculate height based on the aspect ratio
-
-      // Set the width and height of the iframe to maintain the aspect ratio and fit the available space
-      youtubeVideoFrame.style.width = maxWidth + 'px';
-      youtubeVideoFrame.style.height = maxHeight + 'px';
-    }
-
-    window.addEventListener('resize', resizeVideoFrame);
-    youtubeVideoFrame.addEventListener('load', resizeVideoFrame);
-
-    previousButton.addEventListener('click', () => {
-      if (currentVideoIndex > 0) {
-        currentVideoIndex--;
-        updateVideo();
-      }
-    });
-
-    nextButton.addEventListener('click', () => {
-      if (currentVideoIndex < currentVideoArray.length - 1) {
-        currentVideoIndex++;
-        updateVideo();
-      }
-    });
-
-    menuIcon.addEventListener('click', () => {
-      dropdownMenu.style.display = dropdownMenu.style.display === 'none' ? 'block' : 'none';
-    });
-
-
-	// Categorizing videos
-    
-	const meaningMenu = document.getElementById('meaning-menu');
-    const ozMenu = document.getElementById('oz-menu');
-
-    meaningMenu.addEventListener('click', () => {
-      currentVideoArray = meaningVids;
-      currentVideoIndex = 0;
-      updateVideo();
-      dropdownMenu.style.display = 'none';
-    });
-
-    ozMenu.addEventListener('click', () => {
-      currentVideoArray = ozVids;
-      currentVideoIndex = 0;
-      updateVideo();
-      dropdownMenu.style.display = 'none';
-    });
-
-    // Initialize with the first video of the initial category (meaningVids)
-    updateVideo();
-  </script>
 </body>
+<script src="main.js"></script>
 </html>
