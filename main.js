@@ -3,56 +3,67 @@
 
 const videoLinks = {
     meaningVids: [
-      { source: 'y', videoId: '6T7pUEZfgdI' }, // Rogan 1
-      { source: 'y', videoId: 'vIeFt88Hm8s' }, // Rogan 2
-      { source: 'y', videoId: 'jey_CzIOfYE' }, // Harris 1
-      { source: 'y', videoId: 'GEf6X-FueMo' }, // Harris 2
-      { source: 'y', videoId: 'PqpYxD71hJU' }, // Harris 3
-      { source: 'y', videoId: 'aALsFhZKg-Q' }, // Harris 4
-      { source: 'y', videoId: 'I8Xc2_FtpHI' }, // MoM 1
-      { source: 'y', videoId: 'EN2lyN7rM4E' }, // MoM 2
-      { source: 'y', videoId: 'Us979jCjHu8' }, // MoM 3
-      { source: 'y', videoId: 'bV16NEWld8Q' }, // MoM 4
-      { source: 'y', videoId: 'RudKmwzDpNY' }, // MoM 5
-      { source: 'y', videoId: 'nsZ8XqHPjI4' }, // MoM 6
-      { source: 'y', videoId: 'F3n5qtj89QE' }, // MoM 7
-      { source: 'y', videoId: 'Nb5cBkbQpGY' }, // MoM 8
-      { source: 'y', videoId: 'yXZSeiAl4PI' }, // MoM 9
-      { source: 'y', videoId: '7XtEZvLo-Sc' }, // MoM 10
-      { source: 'y', videoId: 'T4fjSrVCDvA' }, // MoM 11
-      { source: 'y', videoId: '6V1eMvGGcXQ' }, // MoM 12
-      // Add more video objects as needed
+        { source: 'y', videoId: '6T7pUEZfgdI' }, // Rogan 1
+        { source: 'y', videoId: 'vIeFt88Hm8s' }, // Rogan 2
+        { source: 'y', videoId: 'jey_CzIOfYE' }, // Harris 1
+        { source: 'y', videoId: 'GEf6X-FueMo' }, // Harris 2
+        { source: 'y', videoId: 'PqpYxD71hJU' }, // Harris 3
+        { source: 'y', videoId: 'aALsFhZKg-Q' }, // Harris 4
+        { source: 'y', videoId: 'I8Xc2_FtpHI' }, // MoM 1
+        { source: 'y', videoId: 'EN2lyN7rM4E' }, // MoM 2
+        { source: 'y', videoId: 'Us979jCjHu8' }, // MoM 3
+        { source: 'y', videoId: 'bV16NEWld8Q' }, // MoM 4
+        { source: 'y', videoId: 'RudKmwzDpNY' }, // MoM 5
+        { source: 'y', videoId: 'nsZ8XqHPjI4' }, // MoM 6
+        { source: 'y', videoId: 'F3n5qtj89QE' }, // MoM 7
+        { source: 'y', videoId: 'Nb5cBkbQpGY' }, // MoM 8
+        { source: 'y', videoId: 'yXZSeiAl4PI' }, // MoM 9
+        { source: 'y', videoId: '7XtEZvLo-Sc' }, // MoM 10
+        { source: 'y', videoId: 'T4fjSrVCDvA' }, // MoM 11
+        { source: 'y', videoId: '6V1eMvGGcXQ' }, // MoM 12
+        // Add more video objects as needed
     ],
     healthVids: [
-      { source: 'r', videoId: 'v304z30' }, // Tate Fitness 1/2
-      { source: 'r', videoId: 'v304n80' }, // Tate Fitness 2/2
-      // Add more video objects as needed
+        { source: 'r', videoId: 'v304z30' }, // Tate Fitness 1/2
+        { source: 'r', videoId: 'v304n80' }, // Tate Fitness 2/2
+        // Add more video objects as needed
     ],
     businessVids: [
-      { source: 'r', videoId: 'v307dqo' }, // HU 3/8
-      // Add more video objects as needed
+        { source: 'r', videoId: 'v307dqo' }, // HU 3/8
+        // Add more video objects as needed
     ],
     relationshipVids: [
-      { source: 'r', videoId: 'v305ics' }, // Network Brilliance
-      // Add more video objects as needed
+        { source: 'r', videoId: 'v305ics' }, // Network Brilliance
+        // Add more video objects as needed
     ],
     ozVids: [
-      { source: 'y', videoId: 'NSLm__BUnmI' }, // SRS Steven Greer 1
-      { source: 'y', videoId: 'p2hk8Qp8dd0' }, // SRS Steven Greer 2
-      // Add more video objects as needed
+        { source: 'y', videoId: 'NSLm__BUnmI' }, // SRS Steven Greer 1
+        { source: 'y', videoId: 'p2hk8Qp8dd0' }, // SRS Steven Greer 2
+        // Add more video objects as needed
     ],
-  };
-  
-  let currentVideoCategory = 'meaningVids'; // Initialize with the "Meaning" category
-  let currentVideoIndex = 0;
-  
-  const youtubeVideoFrame = document.getElementById('video-player');
-  const previousButton = document.getElementById('previous');
-  const nextButton = document.getElementById('next');
-  const menuIcon = document.getElementById('menu-icon');
-  const dropdownMenu = document.getElementById('dropdown-menu');
-  
-  function updateVideo() {
+};
+
+let currentVideoCategory = 'meaningVids'; // Initialize with the "Meaning" category
+let currentVideoIndex = 0;
+
+const youtubeVideoFrame = document.getElementById('video-player');
+const previousButton = document.getElementById('previous');
+const nextButton = document.getElementById('next');
+const menuIcon = document.getElementById('menu-icon');
+const dropdownMenu = document.getElementById('dropdown-menu');
+const progressTracker = document.getElementById('progress-tracker');
+
+function updateProgressTracker() {
+    const numVideosInCategory = Object.keys(videoLinks[currentVideoCategory]).length;
+    const percentageCompleted = (currentVideoIndex + 1) / numVideosInCategory * 100;
+    const progressTracker = document.getElementById('progress-tracker');
+    progressTracker.innerText = `${currentVideoIndex + 1} of ${numVideosInCategory}`;
+
+    const progressBarForeground = document.getElementById('progress-bar-foreground');
+    progressBarForeground.style.width = `${percentageCompleted}%`;
+}
+
+function updateVideo() {
     const videoData = videoLinks[currentVideoCategory][currentVideoIndex];
     const videoId = videoData.videoId;
     const videoSource = videoData.source;
@@ -73,7 +84,10 @@ const videoLinks = {
     youtubeVideoFrame.src = videoLink;
     previousButton.style.display = currentVideoIndex === 0 ? 'none' : 'inline';
     nextButton.style.display = currentVideoIndex === videoLinks[currentVideoCategory].length - 1 ? 'none' : 'inline';
-  }
+    
+    updateProgressTracker();
+}
+
 
 
 function resizeVideoFrame() {
@@ -93,18 +107,18 @@ function resizeVideoFrame() {
 window.addEventListener('resize', resizeVideoFrame);
 youtubeVideoFrame.addEventListener('load', resizeVideoFrame);
 
-previousButton.addEventListener('click', () => {
-if (currentVideoIndex > 0) {
-    currentVideoIndex--;
-    updateVideo();
-}
+nextButton.addEventListener('click', () => {
+    if (currentVideoIndex < videoLinks[currentVideoCategory].length - 1) {
+        currentVideoIndex++;
+        updateVideo();
+    }
 });
 
-nextButton.addEventListener('click', () => {
-if (currentVideoIndex < currentVideoArray.length - 1) {
-    currentVideoIndex++;
-    updateVideo();
-}
+previousButton.addEventListener('click', () => {
+    if (currentVideoIndex > 0) {
+        currentVideoIndex--;
+        updateVideo();
+    }
 });
 
 menuIcon.addEventListener('click', () => {
