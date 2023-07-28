@@ -1,10 +1,13 @@
 // y - youtube video ID
 // r - rumble video ID
+// s - spotify
 
 const videoLinks = {
     meaningVids: [
-        { source: 'y', videoId: '6T7pUEZfgdI' }, // Rogan 1
-        { source: 'y', videoId: 'vIeFt88Hm8s' }, // Rogan 2
+        { source: 'y', videoId: '6T7pUEZfgdI' }, // Rogan 1/4
+        { source: 'y', videoId: '9Xc7DN-noAc' }, // Rogan 2/4
+        { source: 'y', videoId: 'vIeFt88Hm8s' }, // Rogan 3/4
+        { source: 's', videoId: '4GJZmmvdh4NFbFqdqp9ovm' }, // Rogan 4/4
         { source: 'y', videoId: 'jey_CzIOfYE' }, // Harris 1
         { source: 'y', videoId: 'GEf6X-FueMo' }, // Harris 2
         { source: 'y', videoId: 'PqpYxD71hJU' }, // Harris 3
@@ -21,25 +24,61 @@ const videoLinks = {
         { source: 'y', videoId: '7XtEZvLo-Sc' }, // MoM 10
         { source: 'y', videoId: 'T4fjSrVCDvA' }, // MoM 11
         { source: 'y', videoId: '6V1eMvGGcXQ' }, // MoM 12
-        // Add more video objects as needed
+        { source: 'y', videoId: 'f-wWBGo6a2w' }, // Genesis 1/15
+        { source: 'y', videoId: 'hdrLQ7DpiWs' }, // Genesis 2/15
+        { source: 'y', videoId: 'R_GPAl_q2QQ' }, // Genesis 3/15
+        { source: 'y', videoId: 'Ifi5KkXig3s' }, // Genesis 4/15
+        { source: 'y', videoId: '44f3mxcsI50' }, // Genesis 5/15
+        { source: 'y', videoId: 'wNjbasba-Qw' }, // Genesis 6/15
+        { source: 'y', videoId: '6gFjB9FTN58' }, // Genesis 7/15
+        { source: 'y', videoId: 'UoQdp2prfmM' }, // Genesis 8/15
+        { source: 'y', videoId: 'GmuzUZTJ0GA' }, // Genesis 9/15
+        { source: 'y', videoId: '3Y6bCqT85Pc' }, // Genesis 10/15
+        { source: 'y', videoId: 'SKzpj0Ev8Xs' }, // Genesis 11/15
+        { source: 'y', videoId: '-yUP40gwht0' }, // Genesis 12/15
+        { source: 'y', videoId: 'A9JtQN_GoVI' }, // Genesis 13/15
+        { source: 'y', videoId: 'DRJKwDfDbco' }, // Genesis 14/15
+        { source: 'y', videoId: 'B7V8eZ1BLiI' }, // Genesis 15/15
+        { source: 'y', videoId: 'GEASnFvLxhU' }, // Exodus 1/2
+        { source: 'y', videoId: '7idDtmKtyZU' }, // Exodus 2/2
     ],
     healthVids: [
+        { source: 'r', videoId: 'v30due6' }, // Iron Mind 1/5
+        { source: 'r', videoId: 'v30d8ty' }, // Iron Mind 2/5
+        { source: 'r', videoId: 'v30dio8' }, // Iron Mind 3/5
+        { source: 'r', videoId: 'v30dkak' }, // Iron Mind 4/5
+        { source: 'r', videoId: 'v30cucg' }, // Iron Mind 5/5
         { source: 'r', videoId: 'v304z30' }, // Tate Fitness 1/2
         { source: 'r', videoId: 'v304n80' }, // Tate Fitness 2/2
-        // Add more video objects as needed
+        { source: 'y', videoId: 'RpqSy5V1fFQ' }, // Mozi Diet 1
+        { source: 'y', videoId: 'fxyhIXZ6Yog' }, // Mozi Diet 2
+        { source: 's', videoId: '1t2TFwYIt2Onq9NWcgz6eQ' }, // SRS Micheal Bagnell 4/4
     ],
     businessVids: [
+        { source: 'r', videoId: 'v305cg2' }, // HU 1/8
+        { source: 'r', videoId: 'v305dr4' }, // HU 2/8
         { source: 'r', videoId: 'v307dqo' }, // HU 3/8
-        // Add more video objects as needed
+        { source: 'r', videoId: 'v305kyi' }, // HU 4/8
+        { source: 'r', videoId: 'v305n9c' }, // HU 5/8
+        { source: 'r', videoId: 'v305kso' }, // HU 6/8
+        { source: 'r', videoId: 'v30b5fi' }, // HU 7/8
+        { source: 'r', videoId: 'v308iqw' }, // HU 8/8
     ],
     relationshipVids: [
         { source: 'r', videoId: 'v305ics' }, // Network Brilliance
-        // Add more video objects as needed
+        { source: 'r', videoId: 'v30c4zq' }, // PHD 1/5
+        { source: 'r', videoId: 'v30ajxm' }, // PHD 2/5
+        { source: 'r', videoId: 'v308b0u' }, // PHD 3/5
+        { source: 'r', videoId: 'v30766g' }, // PHD 4/5
+        { source: 'r', videoId: 'v306qn8' }, // PHD 5/5
+        { source: 'r', videoId: 'v30btyo' }, // GODMODE 1/4
+        { source: 'r', videoId: 'v30ayog' }, // GODMODE 2/4
+        { source: 'r', videoId: 'v30b4ys' }, // GODMODE 3/4
+        { source: 'r', videoId: 'v30aqu4' }, // GODMODE 4/4
     ],
     ozVids: [
         { source: 'y', videoId: 'NSLm__BUnmI' }, // SRS Steven Greer 1
         { source: 'y', videoId: 'p2hk8Qp8dd0' }, // SRS Steven Greer 2
-        // Add more video objects as needed
     ],
 };
 
@@ -70,15 +109,18 @@ function updateVideo() {
     let videoLink;
   
     if (videoSource === 'y') {
-      videoLink = `https://www.youtube.com/embed/${videoId}`;
-      console.log('Using YouTube video:', videoId);
+        videoLink = `https://www.youtube.com/embed/${videoId}`;
+        console.log('Using YouTube video:', videoId);
     } else if (videoSource === 'r') {
-      videoLink = `https://rumble.com/embed/${videoId}`;
-      console.log('Using Rumble video:', videoId);
+        videoLink = `https://rumble.com/embed/${videoId}`;
+        console.log('Using Rumble video:', videoId);
+    } else if (videoSource === 's') {
+        videoLink = `https://open.spotify.com/embed/episode/${videoId}?utm_source=generator&theme=0`;
+        console.log('Using Spotify video:', videoId);
     } else {
-      // Default to YouTube if the source is not recognized
-      videoLink = `https://www.youtube.com/embed/${videoId}`;
-      console.log('Using default YouTube video:', videoId);
+        // Default to YouTube if the source is not recognized
+        videoLink = `https://www.youtube.com/embed/${videoId}`;
+        console.log('Using default YouTube video:', videoId);
     }
   
     youtubeVideoFrame.src = videoLink;
@@ -87,6 +129,7 @@ function updateVideo() {
     
     updateProgressTracker();
 }
+
 
 
 
