@@ -39,8 +39,10 @@ const videoLinks = {
         { source: 'y', videoId: 'A9JtQN_GoVI' }, // Genesis 13/15
         { source: 'y', videoId: 'DRJKwDfDbco' }, // Genesis 14/15
         { source: 'y', videoId: 'B7V8eZ1BLiI' }, // Genesis 15/15
-        { source: 'y', videoId: 'GEASnFvLxhU' }, // Exodus 1/2
-        { source: 'y', videoId: '7idDtmKtyZU' }, // Exodus 2/2
+        { source: 'y', videoId: 'GEASnFvLxhU' }, // Exodus 1/3
+        { source: 'y', videoId: '7idDtmKtyZU' }, // Exodus 2/3
+        { source: 'y', videoId: '6q2D5-H71yY' }, // Exodus 3/3
+        { source: 'y', videoId: 'IZ-tHaHfB8A' }, // Relevance Realization Conversation
     ],
     healthVids: [
         { source: 'r', videoId: 'v30due6' }, // Iron Mind 1/5
@@ -48,6 +50,7 @@ const videoLinks = {
         { source: 'r', videoId: 'v30dio8' }, // Iron Mind 3/5
         { source: 'r', videoId: 'v30dkak' }, // Iron Mind 4/5
         { source: 'r', videoId: 'v30cucg' }, // Iron Mind 5/5
+        { source: 'y', videoId: 'PFKGHL1MqkU' }, // Mozi Morning Routines
         { source: 'r', videoId: 'v304z30' }, // Tate Fitness 1/2
         { source: 'r', videoId: 'v304n80' }, // Tate Fitness 2/2
         { source: 'y', videoId: 'RpqSy5V1fFQ' }, // Mozi Diet 1
@@ -55,6 +58,7 @@ const videoLinks = {
         { source: 's', videoId: '1t2TFwYIt2Onq9NWcgz6eQ' }, // SRS Micheal Bagnell 4/4
     ],
     businessVids: [
+        { source: 'y', videoId: 'RdAKXJlMIZM' }, // Mozi Money
         { source: 'r', videoId: 'v305cg2' }, // HU 1/8
         { source: 'r', videoId: 'v305dr4' }, // HU 2/8
         { source: 'r', videoId: 'v307dqo' }, // HU 3/8
@@ -63,9 +67,17 @@ const videoLinks = {
         { source: 'r', videoId: 'v305kso' }, // HU 6/8
         { source: 'r', videoId: 'v30b5fi' }, // HU 7/8
         { source: 'r', videoId: 'v308iqw' }, // HU 8/8
+        { source: 'y', videoId: 'dZ7xeVCYC5M' }, // Mozi Nvesting
+        { source: 'y', videoId: '9xAMe0QBFhU' }, // Mozi Margin
+        { source: 'y', videoId: 'oi7bnS8uyJM' }, // Mozi Sales Basics
+        { source: 'y', videoId: 'DpbXWP8fLbc' }, // Mozi Unlimited Funding
+        { source: 'y', videoId: 'WrCt0R3FBFs' }, // Mozi More Followers
+        { source: 'y', videoId: 'yEKu6q0W3gs' }, // Mozi More Money Quick
+        { source: 'y', videoId: 'RdAKXJlMIZM' }, // Mozi Make More Money
     ],
-    relationshipVids: [
+    relationshipsVids: [
         { source: 'r', videoId: 'v305ics' }, // Network Brilliance
+        { source: 'y', videoId: 'RsXcCjLtnsA' }, // Mozi Networking 
         { source: 'r', videoId: 'v30c4zq' }, // PHD 1/5
         { source: 'r', videoId: 'v30ajxm' }, // PHD 2/5
         { source: 'r', videoId: 'v308b0u' }, // PHD 3/5
