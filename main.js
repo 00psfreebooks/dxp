@@ -1,97 +1,123 @@
 // y - youtube video ID
 // r - rumble video ID
 // s - spotify
+// x - xvideos
 
 const videoLinks = {
     meaningVids: [
-        { source: 'y', videoId: '6T7pUEZfgdI' }, // Rogan 1/4
-        { source: 'y', videoId: '9Xc7DN-noAc' }, // Rogan 2/4
-        { source: 'y', videoId: 'vIeFt88Hm8s' }, // Rogan 3/4
-        { source: 's', videoId: '4GJZmmvdh4NFbFqdqp9ovm' }, // Rogan 4/4
-        { source: 'y', videoId: 'jey_CzIOfYE' }, // Harris 1
-        { source: 'y', videoId: 'GEf6X-FueMo' }, // Harris 2
-        { source: 'y', videoId: 'PqpYxD71hJU' }, // Harris 3
-        { source: 'y', videoId: 'aALsFhZKg-Q' }, // Harris 4
-        { source: 'y', videoId: 'I8Xc2_FtpHI' }, // MoM 1
-        { source: 'y', videoId: 'EN2lyN7rM4E' }, // MoM 2
-        { source: 'y', videoId: 'Us979jCjHu8' }, // MoM 3
-        { source: 'y', videoId: 'bV16NEWld8Q' }, // MoM 4
-        { source: 'y', videoId: 'RudKmwzDpNY' }, // MoM 5
-        { source: 'y', videoId: 'nsZ8XqHPjI4' }, // MoM 6
-        { source: 'y', videoId: 'F3n5qtj89QE' }, // MoM 7
-        { source: 'y', videoId: 'Nb5cBkbQpGY' }, // MoM 8
-        { source: 'y', videoId: 'yXZSeiAl4PI' }, // MoM 9
-        { source: 'y', videoId: '7XtEZvLo-Sc' }, // MoM 10
-        { source: 'y', videoId: 'T4fjSrVCDvA' }, // MoM 11
-        { source: 'y', videoId: '6V1eMvGGcXQ' }, // MoM 12
-        { source: 'y', videoId: 'f-wWBGo6a2w' }, // Genesis 1/15
-        { source: 'y', videoId: 'hdrLQ7DpiWs' }, // Genesis 2/15
-        { source: 'y', videoId: 'R_GPAl_q2QQ' }, // Genesis 3/15
-        { source: 'y', videoId: 'Ifi5KkXig3s' }, // Genesis 4/15
-        { source: 'y', videoId: '44f3mxcsI50' }, // Genesis 5/15
-        { source: 'y', videoId: 'wNjbasba-Qw' }, // Genesis 6/15
-        { source: 'y', videoId: '6gFjB9FTN58' }, // Genesis 7/15
-        { source: 'y', videoId: 'UoQdp2prfmM' }, // Genesis 8/15
-        { source: 'y', videoId: 'GmuzUZTJ0GA' }, // Genesis 9/15
-        { source: 'y', videoId: '3Y6bCqT85Pc' }, // Genesis 10/15
-        { source: 'y', videoId: 'SKzpj0Ev8Xs' }, // Genesis 11/15
-        { source: 'y', videoId: '-yUP40gwht0' }, // Genesis 12/15
-        { source: 'y', videoId: 'A9JtQN_GoVI' }, // Genesis 13/15
-        { source: 'y', videoId: 'DRJKwDfDbco' }, // Genesis 14/15
-        { source: 'y', videoId: 'B7V8eZ1BLiI' }, // Genesis 15/15
-        { source: 'y', videoId: 'GEASnFvLxhU' }, // Exodus 1/3
-        { source: 'y', videoId: '7idDtmKtyZU' }, // Exodus 2/3
-        { source: 'y', videoId: '6q2D5-H71yY' }, // Exodus 3/3
-        { source: 'y', videoId: 'IZ-tHaHfB8A' }, // Relevance Realization Conversation
-    ],
+        { source: 'y', videoId: '6T7pUEZfgdI', title: 'Rogan Interview 1/4' },
+        { source: 'y', videoId: '9Xc7DN-noAc', title: 'Rogan Interview 2/4' },
+        { source: 'y', videoId: 'vIeFt88Hm8s', title: 'Rogan Interview 3/4' },
+        { source: 's', videoId: '4GJZmmvdh4NFbFqdqp9ovm', title: 'Rogan Interview 4/4' },
+        { source: 'y', videoId: 'jey_CzIOfYE', title: 'Peterson-Harris 1/4' },
+        { source: 'y', videoId: 'GEf6X-FueMo', title: 'Peterson-Harris 2/4' },
+        { source: 'y', videoId: 'PqpYxD71hJU', title: 'Peterson-Harris 3/4' },
+        { source: 'y', videoId: 'aALsFhZKg-Q', title: 'Peterson-Harris 4/4' },
+        { source: 'y', videoId: 'I8Xc2_FtpHI', title: 'MoM 1/12' },
+        { source: 'y', videoId: 'EN2lyN7rM4E', title: 'MoM 2/12' },
+        { source: 'y', videoId: 'Us979jCjHu8', title: 'MoM 3/12' },
+        { source: 'y', videoId: 'bV16NEWld8Q', title: 'MoM 4/12' },
+        { source: 'y', videoId: 'RudKmwzDpNY', title: 'MoM 5/12' },
+        { source: 'y', videoId: 'nsZ8XqHPjI4', title: 'MoM 6/12' },
+        { source: 'y', videoId: 'F3n5qtj89QE', title: 'MoM 7/12' },
+        { source: 'y', videoId: 'Nb5cBkbQpGY', title: 'MoM 8/12' },
+        { source: 'y', videoId: 'yXZSeiAl4PI', title: 'MoM 9/12' },
+        { source: 'y', videoId: '7XtEZvLo-Sc', title: 'MoM 10/12' },
+        { source: 'y', videoId: 'T4fjSrVCDvA', title: 'MoM 11/12' },
+        { source: 'y', videoId: '6V1eMvGGcXQ', title: 'MoM 12/12' },
+        { source: 'y', videoId: 'f-wWBGo6a2w', title: 'Genesis 1/15' },
+        { source: 'y', videoId: 'hdrLQ7DpiWs', title: 'Genesis 2/15' },
+        { source: 'y', videoId: 'R_GPAl_q2QQ', title: 'Genesis 3/15' },
+        { source: 'y', videoId: 'Ifi5KkXig3s', title: 'Genesis 4/15' },
+        { source: 'y', videoId: '44f3mxcsI50', title: 'Genesis 5/15' },
+        { source: 'y', videoId: 'wNjbasba-Qw', title: 'Genesis 6/15' },
+        { source: 'y', videoId: '6gFjB9FTN58', title: 'Genesis 7/15' },
+        { source: 'y', videoId: 'UoQdp2prfmM', title: 'Genesis 8/15' },
+        { source: 'y', videoId: 'GmuzUZTJ0GA', title: 'Genesis 9/15' },
+        { source: 'y', videoId: '3Y6bCqT85Pc', title: 'Genesis 10/15' },
+        { source: 'y', videoId: 'SKzpj0Ev8Xs', title: 'Genesis 11/15' },
+        { source: 'y', videoId: '-yUP40gwht0', title: 'Genesis 12/15' },
+        { source: 'y', videoId: 'A9JtQN_GoVI', title: 'Genesis 13/15' },
+        { source: 'y', videoId: 'DRJKwDfDbco', title: 'Genesis 14/15' },
+        { source: 'y', videoId: 'B7V8eZ1BLiI', title: 'Genesis 15/15' },
+        { source: 'y', videoId: 'GEASnFvLxhU', title: 'Exodus 1/3' },
+        { source: 'y', videoId: '7idDtmKtyZU', title: 'Exodus 2/3' },
+        { source: 'y', videoId: '6q2D5-H71yY', title: 'Exodus 3/3' },
+        { source: 'y', videoId: 'IZ-tHaHfB8A', title: 'Relevance Realization Conversation' },
+    ],    
     healthVids: [
-        { source: 'r', videoId: 'v30due6' }, // Iron Mind 1/5
-        { source: 'r', videoId: 'v30d8ty' }, // Iron Mind 2/5
-        { source: 'r', videoId: 'v30dio8' }, // Iron Mind 3/5
-        { source: 'r', videoId: 'v30dkak' }, // Iron Mind 4/5
-        { source: 'r', videoId: 'v30cucg' }, // Iron Mind 5/5
-        { source: 'y', videoId: 'PFKGHL1MqkU' }, // Mozi Morning Routines
-        { source: 'r', videoId: 'v304z30' }, // Tate Fitness 1/2
-        { source: 'r', videoId: 'v304n80' }, // Tate Fitness 2/2
-        { source: 'y', videoId: 'RpqSy5V1fFQ' }, // Mozi Diet 1
-        { source: 'y', videoId: 'fxyhIXZ6Yog' }, // Mozi Diet 2
-        { source: 's', videoId: '1t2TFwYIt2Onq9NWcgz6eQ' }, // SRS Micheal Bagnell 4/4
+        { source: 'r', videoId: 'v30due6', title: 'Iron Mind 1/5' },
+        { source: 'r', videoId: 'v30d8ty', title: 'Iron Mind 2/5' },
+        { source: 'r', videoId: 'v30dio8', title: 'Iron Mind 3/5' },
+        { source: 'r', videoId: 'v30dkak', title: 'Iron Mind 4/5' },
+        { source: 'r', videoId: 'v30cucg', title: 'Iron Mind 5/5' },
+        { source: 'y', videoId: 'PFKGHL1MqkU', title: 'Mozi - Morning Routines' },
+        { source: 'r', videoId: 'v304z30', title: 'Tate Fitness 1/2' },
+        { source: 'r', videoId: 'v304n80', title: 'Tate Fitness 2/2' },
+        { source: 'y', videoId: 'RpqSy5V1fFQ', title: 'Mozi - Diet 1.0' },
+        { source: 'y', videoId: 'fxyhIXZ6Yog', title: 'Mozi - Diet 2.0' },
+        { source: 's', videoId: '1t2TFwYIt2Onq9NWcgz6eQ', title: 'SRS - Micheal Bagnell 4/4' }
     ],
     businessVids: [
-        { source: 'y', videoId: 'RdAKXJlMIZM' }, // Mozi Money
-        { source: 'r', videoId: 'v305cg2' }, // HU 1/8
-        { source: 'r', videoId: 'v305dr4' }, // HU 2/8
-        { source: 'r', videoId: 'v307dqo' }, // HU 3/8
-        { source: 'r', videoId: 'v305kyi' }, // HU 4/8
-        { source: 'r', videoId: 'v305n9c' }, // HU 5/8
-        { source: 'r', videoId: 'v305kso' }, // HU 6/8
-        { source: 'r', videoId: 'v30b5fi' }, // HU 7/8
-        { source: 'r', videoId: 'v308iqw' }, // HU 8/8
-        { source: 'y', videoId: 'dZ7xeVCYC5M' }, // Mozi Nvesting
-        { source: 'y', videoId: '9xAMe0QBFhU' }, // Mozi Margin
-        { source: 'y', videoId: 'oi7bnS8uyJM' }, // Mozi Sales Basics
-        { source: 'y', videoId: 'DpbXWP8fLbc' }, // Mozi Unlimited Funding
-        { source: 'y', videoId: 'WrCt0R3FBFs' }, // Mozi More Followers
-        { source: 'y', videoId: 'yEKu6q0W3gs' }, // Mozi More Money Quick
-        { source: 'y', videoId: 'RdAKXJlMIZM' }, // Mozi Make More Money
+        { source: 'y', videoId: 'RdAKXJlMIZM', title: 'Mozi - Money' },
+        { source: 'r', videoId: 'v305cg2', title: 'HU 1/8' },
+        { source: 'r', videoId: 'v305dr4', title: 'HU 2/8' },
+        { source: 'r', videoId: 'v307dqo', title: 'HU 3/8' },
+        { source: 'r', videoId: 'v305kyi', title: 'HU 4/8' },
+        { source: 'r', videoId: 'v305n9c', title: 'HU 5/8' },
+        { source: 'r', videoId: 'v305kso', title: 'HU 6/8' },
+        { source: 'r', videoId: 'v30b5fi', title: 'HU 7/8' },
+        { source: 'r', videoId: 'v308iqw', title: 'HU 8/8' },
+        { source: 'y', videoId: 'dZ7xeVCYC5M', title: 'Mozi - Investing' },
+        { source: 'y', videoId: '9xAMe0QBFhU', title: 'Mozi - Margins' },
+        { source: 'y', videoId: 'oi7bnS8uyJM', title: 'Mozi - Sales Basics' },
+        { source: 'y', videoId: 'DpbXWP8fLbc', title: 'Mozi - Unlimited Funding' },
+        { source: 'y', videoId: 'WrCt0R3FBFs', title: 'Mozi - More Followers' },
+        { source: 'y', videoId: 'yEKu6q0W3gs', title: 'Mozi - More Money Quick' },
+        { source: 'y', videoId: 'RdAKXJlMIZM', title: 'Mozi - Make More Money' }
     ],
     relationshipsVids: [
-        { source: 'r', videoId: 'v305ics' }, // Network Brilliance
-        { source: 'y', videoId: 'RsXcCjLtnsA' }, // Mozi Networking 
-        { source: 'r', videoId: 'v30c4zq' }, // PHD 1/5
-        { source: 'r', videoId: 'v30ajxm' }, // PHD 2/5
-        { source: 'r', videoId: 'v308b0u' }, // PHD 3/5
-        { source: 'r', videoId: 'v30766g' }, // PHD 4/5
-        { source: 'r', videoId: 'v306qn8' }, // PHD 5/5
-        { source: 'r', videoId: 'v30btyo' }, // GODMODE 1/4
-        { source: 'r', videoId: 'v30ayog' }, // GODMODE 2/4
-        { source: 'r', videoId: 'v30b4ys' }, // GODMODE 3/4
-        { source: 'r', videoId: 'v30aqu4' }, // GODMODE 4/4
+        { source: 'r', videoId: 'v305ics', title: 'Network Brilliance' },
+        { source: 'y', videoId: 'RsXcCjLtnsA', title: 'Mozi - Networking' },
+        { source: 'r', videoId: 'v30c4zq', title: 'PHD 1/5' },
+        { source: 'r', videoId: 'v30ajxm', title: 'PHD 2/5' },
+        { source: 'r', videoId: 'v308b0u', title: 'PHD 3/5' },
+        { source: 'r', videoId: 'v30766g', title: 'PHD 4/5' },
+        { source: 'r', videoId: 'v306qn8', title: 'PHD 5/5' },
+        { source: 'r', videoId: 'v30btyo', title: 'GODMODE 1/4' },
+        { source: 'r', videoId: 'v30ayog', title: 'GODMODE 2/4' },
+        { source: 'r', videoId: 'v30b4ys', title: 'GODMODE 3/4' },
+        { source: 'r', videoId: 'v30aqu4', title: 'GODMODE 4/4' },
     ],
     ozVids: [
-        { source: 'y', videoId: 'NSLm__BUnmI' }, // SRS Steven Greer 1
-        { source: 'y', videoId: 'p2hk8Qp8dd0' }, // SRS Steven Greer 2
+        { source: 'y', videoId: 'NSLm__BUnmI', title: 'SRS - Steven Greer 1/2' },
+        { source: 'y', videoId: 'p2hk8Qp8dd0', title: 'SRS - Steven Greer 2/2' },
     ],
+    hardcoreVids: [
+        { source: 'y', videoId: '3q4vn2z4o-k', title: 'Dirty Talk Overview' },
+        /*
+        { source: 'x', videoId: '77972343', title: 'Dirty Talk 1/5' },
+        { source: 'x', videoId: '77971727', title: 'Dirty Talk 2/5' },
+        { source: 'x', videoId: '', title: 'Dirty Talk 3/5' },
+        { source: 'x', videoId: '', title: 'Dirty Talk 4/5' },
+        { source: 'x', videoId: '77972217', title: 'Dirty Talk 5/5' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 1/15' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 2/15' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 3/15' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 4/15' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 5/15' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 6/15' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 7/15' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 8/15' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 9/15' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 10/15' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 11/15' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 12/15' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 13/15' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 14/15' },
+        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 15/15' },
+        */
+    ]
 };
 
 let currentVideoCategory = 'meaningVids'; // Initialize with the "Meaning" category
@@ -102,6 +128,7 @@ const previousButton = document.getElementById('previous');
 const nextButton = document.getElementById('next');
 const menuIcon = document.getElementById('menu-icon');
 const dropdownMenu = document.getElementById('dropdown-menu');
+const videoTitleElement = document.getElementById('video-title');
 const progressTracker = document.getElementById('progress-tracker');
 
 function updateProgressTracker() {
@@ -116,8 +143,11 @@ function updateProgressTracker() {
 
 function updateVideo() {
     const videoData = videoLinks[currentVideoCategory][currentVideoIndex];
+    //console.log("Video Data:", videoData); // Check if video data is being correctly fetched
     const videoId = videoData.videoId;
     const videoSource = videoData.source;
+    const videoTitle = videoData.title;
+
     let videoLink;
   
     if (videoSource === 'y') {
@@ -129,6 +159,9 @@ function updateVideo() {
     } else if (videoSource === 's') {
         videoLink = `https://open.spotify.com/embed/episode/${videoId}?utm_source=generator&theme=0`;
         console.log('Using Spotify video:', videoId);
+    } else if (videoSource === 'x') {
+        videoLink = `https://www.xvideos.com/embedframe/${videoId}`;
+        console.log('Using XVideos video:', videoId);
     } else {
         // Default to YouTube if the source is not recognized
         videoLink = `https://www.youtube.com/embed/${videoId}`;
@@ -139,6 +172,8 @@ function updateVideo() {
     previousButton.style.display = currentVideoIndex === 0 ? 'none' : 'inline';
     nextButton.style.display = currentVideoIndex === videoLinks[currentVideoCategory].length - 1 ? 'none' : 'inline';
     
+    videoTitleElement.textContent = videoTitle;
+
     updateProgressTracker();
 }
 
@@ -188,6 +223,7 @@ const healthMenu = document.getElementById('health-menu');
 const businessMenu = document.getElementById('business-menu');
 const relationshipsMenu = document.getElementById('relationships-menu');
 const ozMenu = document.getElementById('oz-menu');
+const hardcoreMenu = document.getElementById('hardcore-menu');
 
 meaningMenu.addEventListener('click', () => {
     currentVideoCategory = 'meaningVids';
@@ -219,6 +255,13 @@ relationshipsMenu.addEventListener('click', () => {
 
 ozMenu.addEventListener('click', () => {
     currentVideoCategory = 'ozVids';
+    currentVideoIndex = 0;
+    updateVideo();
+    dropdownMenu.style.display = 'none';
+});
+
+hardcoreMenu.addEventListener('click', () => {
+    currentVideoCategory = 'hardcoreVids';
     currentVideoIndex = 0;
     updateVideo();
     dropdownMenu.style.display = 'none';
