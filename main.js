@@ -1,7 +1,9 @@
 // y - youtube video ID
 // r - rumble video ID
 // s - spotify
+// i - internet archive
 // x - xvideos
+// e - eporner
 
 const videoLinks = {
     meaningVids: [
@@ -13,18 +15,18 @@ const videoLinks = {
         { source: 'y', videoId: 'GEf6X-FueMo', title: 'Peterson-Harris 2/4' },
         { source: 'y', videoId: 'PqpYxD71hJU', title: 'Peterson-Harris 3/4' },
         { source: 'y', videoId: 'aALsFhZKg-Q', title: 'Peterson-Harris 4/4' },
-        { source: 'y', videoId: 'I8Xc2_FtpHI', title: 'MoM 1/12' },
-        { source: 'y', videoId: 'EN2lyN7rM4E', title: 'MoM 2/12' },
-        { source: 'y', videoId: 'Us979jCjHu8', title: 'MoM 3/12' },
-        { source: 'y', videoId: 'bV16NEWld8Q', title: 'MoM 4/12' },
-        { source: 'y', videoId: 'RudKmwzDpNY', title: 'MoM 5/12' },
-        { source: 'y', videoId: 'nsZ8XqHPjI4', title: 'MoM 6/12' },
-        { source: 'y', videoId: 'F3n5qtj89QE', title: 'MoM 7/12' },
-        { source: 'y', videoId: 'Nb5cBkbQpGY', title: 'MoM 8/12' },
-        { source: 'y', videoId: 'yXZSeiAl4PI', title: 'MoM 9/12' },
-        { source: 'y', videoId: '7XtEZvLo-Sc', title: 'MoM 10/12' },
-        { source: 'y', videoId: 'T4fjSrVCDvA', title: 'MoM 11/12' },
-        { source: 'y', videoId: '6V1eMvGGcXQ', title: 'MoM 12/12' },
+        { source: 'y', videoId: 'I8Xc2_FtpHI', title: 'Maps of Meaning 1/12' },
+        { source: 'y', videoId: 'EN2lyN7rM4E', title: 'Maps of Meaning 2/12' },
+        { source: 'y', videoId: 'Us979jCjHu8', title: 'Maps of Meaning 3/12' },
+        { source: 'y', videoId: 'bV16NEWld8Q', title: 'Maps of Meaning 4/12' },
+        { source: 'y', videoId: 'RudKmwzDpNY', title: 'Maps of Meaning 5/12' },
+        { source: 'y', videoId: 'nsZ8XqHPjI4', title: 'Maps of Meaning 6/12' },
+        { source: 'y', videoId: 'F3n5qtj89QE', title: 'Maps of Meaning 7/12' },
+        { source: 'y', videoId: 'Nb5cBkbQpGY', title: 'Maps of Meaning 8/12' },
+        { source: 'y', videoId: 'yXZSeiAl4PI', title: 'Maps of Meaning 9/12' },
+        { source: 'y', videoId: '7XtEZvLo-Sc', title: 'Maps of Meaning 10/12' },
+        { source: 'y', videoId: 'T4fjSrVCDvA', title: 'Maps of Meaning 11/12' },
+        { source: 'y', videoId: '6V1eMvGGcXQ', title: 'Maps of Meaning 12/12' },
         { source: 'y', videoId: 'f-wWBGo6a2w', title: 'Genesis 1/15' },
         { source: 'y', videoId: 'hdrLQ7DpiWs', title: 'Genesis 2/15' },
         { source: 'y', videoId: 'R_GPAl_q2QQ', title: 'Genesis 3/15' },
@@ -60,6 +62,7 @@ const videoLinks = {
     ],
     businessVids: [
         { source: 'y', videoId: 'RdAKXJlMIZM', title: 'Mozi - Money' },
+        { source: 'y', videoId: 'hBtxSzKhM44', title: '40 Books, 40 Lessons' },
         { source: 'r', videoId: 'v305cg2', title: 'HU 1/8' },
         { source: 'r', videoId: 'v305dr4', title: 'HU 2/8' },
         { source: 'r', videoId: 'v307dqo', title: 'HU 3/8' },
@@ -79,6 +82,7 @@ const videoLinks = {
     relationshipsVids: [
         { source: 'r', videoId: 'v305ics', title: 'Network Brilliance' },
         { source: 'y', videoId: 'RsXcCjLtnsA', title: 'Mozi - Networking' },
+        { source: 'y', videoId: 'NMsnmzST654', title: 'Tate - The IRL Playboy' },
         { source: 'r', videoId: 'v30c4zq', title: 'PHD 1/5' },
         { source: 'r', videoId: 'v30ajxm', title: 'PHD 2/5' },
         { source: 'r', videoId: 'v308b0u', title: 'PHD 3/5' },
@@ -90,33 +94,33 @@ const videoLinks = {
         { source: 'r', videoId: 'v30aqu4', title: 'GODMODE 4/4' },
     ],
     ozVids: [
+        { source: 'y', videoId: 'hBtxSzKhM44', title: '40 Books 40 Lessons' },
         { source: 'y', videoId: 'NSLm__BUnmI', title: 'SRS - Steven Greer 1/2' },
         { source: 'y', videoId: 'p2hk8Qp8dd0', title: 'SRS - Steven Greer 2/2' },
     ],
     hardcoreVids: [
         { source: 'y', videoId: '3q4vn2z4o-k', title: 'Dirty Talk Overview' },
-        /*
-        { source: 'x', videoId: '77972343', title: 'Dirty Talk 1/5' },
-        { source: 'x', videoId: '77971727', title: 'Dirty Talk 2/5' },
-        { source: 'x', videoId: '', title: 'Dirty Talk 3/5' },
-        { source: 'x', videoId: '', title: 'Dirty Talk 4/5' },
-        { source: 'x', videoId: '77972217', title: 'Dirty Talk 5/5' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 1/15' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 2/15' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 3/15' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 4/15' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 5/15' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 6/15' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 7/15' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 8/15' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 9/15' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 10/15' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 11/15' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 12/15' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 13/15' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 14/15' },
-        { source: 'x', videoId: '', title: 'Sexual Dominance Escalation 15/15' },
-        */
+        { source: 'e', videoId: 'oX0HthvMeJP', title: 'Dirty Talk 1/5' },
+        { source: 'e', videoId: 'NzyrZ2ITsCm', title: 'Dirty Talk 2/5' },
+        { source: 'e', videoId: 'R7nCReXzysR', title: 'Dirty Talk 3/5' },
+        { source: 'e', videoId: 'L4Bo5QumLEu', title: 'Dirty Talk 4/5' },
+        { source: 'e', videoId: 'l1icukur3oc', title: 'Dirty Talk 5/5' },
+        { source: 'e', videoId: 'J3y9N6pXPHw', title: 'Sexual Dominance Escalation 1/15' },
+        { source: 'e', videoId: 'W7QRVATzo4H', title: 'Sexual Dominance Escalation 2/15' },
+        { source: 'e', videoId: 'VJo381rHArS', title: 'Sexual Dominance Escalation 3/15' },
+        { source: 'e', videoId: 'cAuCJJ8HeN0', title: 'Sexual Dominance Escalation 4/15' },
+        { source: 'e', videoId: 'nyUgjFtZaPk', title: 'Sexual Dominance Escalation 5/15' },
+        { source: 'e', videoId: 'xxe8ggXCL1S', title: 'Sexual Dominance Escalation 6/15' },
+        { source: 'e', videoId: '2Nd642O6ARl', title: 'Sexual Dominance Escalation 7/15' },
+        { source: 'e', videoId: 'bh6ooH5mmAH', title: 'Sexual Dominance Escalation 8/15' },
+        { source: 'e', videoId: 'bWrnWce0L8i', title: 'Sexual Dominance Escalation 9/15' },
+        { source: 'e', videoId: '90Y8u9QRx1d', title: 'Sexual Dominance Escalation 10/15' },
+        { source: 'e', videoId: 'gF7fq3iIwYw', title: 'Sexual Dominance Escalation 11/15' },
+        { source: 'e', videoId: 'OtkDBybwUX0', title: 'Sexual Dominance Escalation 12/15' },
+        { source: 'e', videoId: 'dFspvOfrVRb', title: 'Sexual Dominance Escalation 13/15' },
+        //{ source: 'x', videoId: '77984073', title: 'Sexual Dominance Escalation 14/15' },
+        //{ source: 'e', videoId: '', title: 'Sexual Dominance Escalation 14/15' },
+        { source: 'e', videoId: 'KfVPFTphj0I', title: 'Sexual Dominance Escalation 15/15' },
     ]
 };
 
@@ -152,20 +156,26 @@ function updateVideo() {
   
     if (videoSource === 'y') {
         videoLink = `https://www.youtube.com/embed/${videoId}`;
-        console.log('Using YouTube video:', videoId);
+        //console.log('Using YouTube video:', videoId);
     } else if (videoSource === 'r') {
         videoLink = `https://rumble.com/embed/${videoId}`;
-        console.log('Using Rumble video:', videoId);
+        //console.log('Using Rumble video:', videoId);
     } else if (videoSource === 's') {
         videoLink = `https://open.spotify.com/embed/episode/${videoId}?utm_source=generator&theme=0`;
-        console.log('Using Spotify video:', videoId);
+        //console.log('Using Spotify video:', videoId);
+    } else if (videoSource === 'i') {
+        videoLink = `https://archive.org/embed/${videoId}`;
+        //console.log('Using Internet Archive video:', videoId);
     } else if (videoSource === 'x') {
         videoLink = `https://www.xvideos.com/embedframe/${videoId}`;
-        console.log('Using XVideos video:', videoId);
+        //console.log('Using XVideos video:', videoId);
+    } else if (videoSource === 'e') {
+        videoLink = `https://www.eporner.com/embed/${videoId}/`;
+        //console.log('Using EPorner video:', videoId);
     } else {
         // Default to YouTube if the source is not recognized
         videoLink = `https://www.youtube.com/embed/${videoId}`;
-        console.log('Using default YouTube video:', videoId);
+        //console.log('Using default YouTube video:', videoId);
     }
   
     youtubeVideoFrame.src = videoLink;
