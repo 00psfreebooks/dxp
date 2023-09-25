@@ -61,6 +61,7 @@ const videoLinks = {
         { source: 's', videoId: '1t2TFwYIt2Onq9NWcgz6eQ', title: 'SRS - Micheal Bagnell 4/4' }
     ],
     businessVids: [
+        { source: 'y', videoId: 'YFA8AS5Cu2w', title: 'Tired of Being Broke' },
         { source: 'y', videoId: 'RdAKXJlMIZM', title: 'Mozi - Money' },
         { source: 'y', videoId: 'hBtxSzKhM44', title: '40 Books, 40 Lessons' },
         { source: 'r', videoId: 'v305cg2', title: 'HU 1/8' },
@@ -77,7 +78,7 @@ const videoLinks = {
         { source: 'y', videoId: 'DpbXWP8fLbc', title: 'Mozi - Unlimited Funding' },
         { source: 'y', videoId: 'WrCt0R3FBFs', title: 'Mozi - More Followers' },
         { source: 'y', videoId: 'yEKu6q0W3gs', title: 'Mozi - More Money Quick' },
-        { source: 'y', videoId: 'RdAKXJlMIZM', title: 'Mozi - Make More Money' }
+        { source: 'y', videoId: 'cq8GyLrEuAk', title: 'Mozi - 14 Lessons' },
     ],
     relationshipsVids: [
         { source: 'r', videoId: 'v305ics', title: 'Network Brilliance' },
