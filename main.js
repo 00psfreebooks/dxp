@@ -72,6 +72,7 @@ const videoLinks = {
         { source: 'r', videoId: 'v305kso', title: 'HU 6/8' },
         { source: 'r', videoId: 'v30b5fi', title: 'HU 7/8' },
         { source: 'r', videoId: 'v308iqw', title: 'HU 8/8' },
+        { source: 'y', videoId: '7sLXhCDRaV8', title: 'Mozi - 10 Ideas' },
         { source: 'y', videoId: 'dZ7xeVCYC5M', title: 'Mozi - Investing' },
         { source: 'y', videoId: '9xAMe0QBFhU', title: 'Mozi - Margins' },
         { source: 'y', videoId: 'oi7bnS8uyJM', title: 'Mozi - Sales Basics' },
